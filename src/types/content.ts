@@ -1,3 +1,16 @@
+export interface GearFrontmatter {
+  title: string
+  category: string
+  type: string
+  brand: string
+  price: string
+  rating: number
+  date: string
+  image?: string
+  tags: string[]
+  [key: string]: unknown
+}
+
 export interface RecipeFrontmatter {
   title: string
   brewer: string
@@ -10,6 +23,7 @@ export interface RecipeFrontmatter {
   date: string
   dose: string
   water: string
+  image?: string
   tags: string[]
   [key: string]: unknown
 }
@@ -23,6 +37,7 @@ export interface ReviewFrontmatter {
   roastLevel: string
   rating: number
   date: string
+  image?: string
   tags: string[]
   [key: string]: unknown
 }

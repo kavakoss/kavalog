@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation"
+import Image from "next/image"
 import { getMdxContent } from "@/lib/mdx"
 import { RecipeFrontmatter } from "@/types/content"
 import { MdxContent } from "@/components/mdx-content"
@@ -25,6 +26,17 @@ export default async function RecipeDetailPage({ params }: Props) {
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-16">
+      {frontmatter.image && (
+        <div className="relative w-full aspect-2/1 rounded-xl overflow-hidden mb-8">
+          <Image
+            src={frontmatter.image}
+            alt={frontmatter.title}
+            fill
+            className="object-cover"
+            sizes="(max-width: 896px) 100vw, 896px"
+          />
+        </div>
+      )}
       {/* Header */}
       <div className="mb-8">
         <div className="flex flex-wrap gap-2 mb-3">
